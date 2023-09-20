@@ -1,0 +1,251 @@
+Config:
+checkpoint_dir: /media/home/chliu/EquivariantSSL/attempt/training/checkpoints//stl10-32-resnet-seed1/
+log_dir: /media/home/chliu/EquivariantSSL/attempt/training/logs/
+output_save_path: /media/home/chliu/EquivariantSSL/attempt/training/results/
+dataset_dir: /media/home/chliu/EquivariantSSL/attempt/data/stl10/
+max_epoch: 200
+batch_size: 256
+learning_rate: 1e-3
+learning_rate_probing: 1e-3
+probing_epoch: 20
+num_workers: 8
+dataset: stl10
+random_seed: 1
+config_file_name: ../config/stl10_simclr_seed1.yaml
+gpu_id: 0
+model: resnet
+z_dim: 128
+equivariance_dim: 32
+in_channels: 3
+num_classes: 10
+
+Training History:
+Epoch: 1. train_loss: 0.056748. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.483.
+Epoch: 2. train_loss: 0.056482. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.589. 
+Epoch: 3. train_loss: 0.055176. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.633. 
+Epoch: 4. train_loss: 0.054130. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.690. 
+Epoch: 5. train_loss: 0.053386. train_acc: 33.998. val_loss: nan. val_acc: 38.000. train_simclr_pseudoAcc: 0.705. 
+Best model (so far) successfully saved.
+val_acc:20% model successfully saved.
+val_acc:30% model successfully saved.
+Epoch: 6. train_loss: 0.053282. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.721. 
+Epoch: 7. train_loss: 0.052773. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.745. 
+Epoch: 8. train_loss: 0.052517. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.775. 
+Epoch: 9. train_loss: 0.052345. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.785. 
+Epoch: 10. train_loss: 0.052213. train_acc: 42.855. val_loss: nan. val_acc: 44.362. train_simclr_pseudoAcc: 0.797. 
+Best model (so far) successfully saved.
+val_acc:40% model successfully saved.
+Epoch: 11. train_loss: 0.052101. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.797. 
+Epoch: 12. train_loss: 0.051947. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.799. 
+Epoch: 13. train_loss: 0.051859. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.799. 
+Epoch: 14. train_loss: 0.051854. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.800. 
+Epoch: 15. train_loss: 0.051706. train_acc: 46.146. val_loss: nan. val_acc: 48.000. train_simclr_pseudoAcc: 0.801. 
+Best model (so far) successfully saved.
+Epoch: 16. train_loss: 0.051633. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.807. 
+Epoch: 17. train_loss: 0.051565. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.821. 
+Epoch: 18. train_loss: 0.051489. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.824. 
+Epoch: 19. train_loss: 0.051433. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.825. 
+Epoch: 20. train_loss: 0.051337. train_acc: 49.455. val_loss: nan. val_acc: 50.763. train_simclr_pseudoAcc: 0.826. 
+Best model (so far) successfully saved.
+val_acc:50% model successfully saved.
+Epoch: 21. train_loss: 0.051325. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.827. 
+Epoch: 22. train_loss: 0.051288. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.829. 
+Epoch: 23. train_loss: 0.051276. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.830. 
+Epoch: 24. train_loss: 0.051209. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.834. 
+Epoch: 25. train_loss: 0.051210. train_acc: 51.205. val_loss: nan. val_acc: 52.562. train_simclr_pseudoAcc: 0.844. 
+Best model (so far) successfully saved.
+Epoch: 26. train_loss: 0.051147. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.848. 
+Epoch: 27. train_loss: 0.051122. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.849. 
+Epoch: 28. train_loss: 0.051084. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.850. 
+Epoch: 29. train_loss: 0.051081. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.851. 
+Epoch: 30. train_loss: 0.051052. train_acc: 53.527. val_loss: nan. val_acc: 54.788. train_simclr_pseudoAcc: 0.852. 
+Best model (so far) successfully saved.
+Epoch: 31. train_loss: 0.051006. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.853. 
+Epoch: 32. train_loss: 0.051007. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.853. 
+Epoch: 33. train_loss: 0.050971. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.853. 
+Epoch: 34. train_loss: 0.050973. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.854. 
+Epoch: 35. train_loss: 0.050959. train_acc: 55.925. val_loss: nan. val_acc: 56.263. train_simclr_pseudoAcc: 0.855. 
+Best model (so far) successfully saved.
+Epoch: 36. train_loss: 0.050906. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.855. 
+Epoch: 37. train_loss: 0.050877. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.855. 
+Epoch: 38. train_loss: 0.050864. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.856. 
+Epoch: 39. train_loss: 0.050879. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.855. 
+Epoch: 40. train_loss: 0.050859. train_acc: 57.697. val_loss: nan. val_acc: 57.188. train_simclr_pseudoAcc: 0.855. 
+Best model (so far) successfully saved.
+Epoch: 41. train_loss: 0.050849. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.856. 
+Epoch: 42. train_loss: 0.050880. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.856. 
+Epoch: 43. train_loss: 0.050857. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.856. 
+Epoch: 44. train_loss: 0.050799. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.856. 
+Epoch: 45. train_loss: 0.050794. train_acc: 59.178. val_loss: nan. val_acc: 59.113. train_simclr_pseudoAcc: 0.857. 
+Best model (so far) successfully saved.
+Epoch: 46. train_loss: 0.050769. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.857. 
+Epoch: 47. train_loss: 0.050779. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.857. 
+Epoch: 48. train_loss: 0.050785. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.858. 
+Epoch: 49. train_loss: 0.050811. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.858. 
+Epoch: 50. train_loss: 0.050716. train_acc: 60.199. val_loss: nan. val_acc: 59.513. train_simclr_pseudoAcc: 0.864. 
+Best model (so far) successfully saved.
+Epoch: 51. train_loss: 0.050699. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.869. 
+Epoch: 52. train_loss: 0.050691. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.869. 
+Epoch: 53. train_loss: 0.050663. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.870. 
+Epoch: 54. train_loss: 0.050651. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.871. 
+Epoch: 55. train_loss: 0.050719. train_acc: 60.684. val_loss: nan. val_acc: 60.138. train_simclr_pseudoAcc: 0.871. 
+Best model (so far) successfully saved.
+val_acc:60% model successfully saved.
+Epoch: 56. train_loss: 0.050647. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.872. 
+Epoch: 57. train_loss: 0.050682. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.872. 
+Epoch: 58. train_loss: 0.050608. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.873. 
+Epoch: 59. train_loss: 0.050608. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.874. 
+Epoch: 60. train_loss: 0.050636. train_acc: 62.460. val_loss: nan. val_acc: 60.987. train_simclr_pseudoAcc: 0.876. 
+Best model (so far) successfully saved.
+Epoch: 61. train_loss: 0.050546. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.879. 
+Epoch: 62. train_loss: 0.050580. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.881. 
+Epoch: 63. train_loss: 0.050568. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.882. 
+Epoch: 64. train_loss: 0.050583. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.882. 
+Epoch: 65. train_loss: 0.050525. train_acc: 63.434. val_loss: nan. val_acc: 61.662. train_simclr_pseudoAcc: 0.884. 
+Best model (so far) successfully saved.
+Epoch: 66. train_loss: 0.050505. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.884. 
+Epoch: 67. train_loss: 0.050516. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.884. 
+Epoch: 68. train_loss: 0.050507. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.885. 
+Epoch: 69. train_loss: 0.050468. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.885. 
+Epoch: 70. train_loss: 0.050482. train_acc: 64.166. val_loss: nan. val_acc: 62.800. train_simclr_pseudoAcc: 0.885. 
+Best model (so far) successfully saved.
+Epoch: 71. train_loss: 0.050483. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.885. 
+Epoch: 72. train_loss: 0.050449. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.886. 
+Epoch: 73. train_loss: 0.050476. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.885. 
+Epoch: 74. train_loss: 0.050443. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.886. 
+Epoch: 75. train_loss: 0.050422. train_acc: 64.314. val_loss: nan. val_acc: 62.500. train_simclr_pseudoAcc: 0.887. 
+Epoch: 76. train_loss: 0.050404. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.888. 
+Epoch: 77. train_loss: 0.050414. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.888. 
+Epoch: 78. train_loss: 0.050394. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.890. 
+Epoch: 79. train_loss: 0.050375. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.891. 
+Epoch: 80. train_loss: 0.050384. train_acc: 65.387. val_loss: nan. val_acc: 63.300. train_simclr_pseudoAcc: 0.893. 
+Best model (so far) successfully saved.
+Epoch: 81. train_loss: 0.050371. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.895. 
+Epoch: 82. train_loss: 0.050371. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.895. 
+Epoch: 83. train_loss: 0.050342. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.896. 
+Epoch: 84. train_loss: 0.050352. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.897. 
+Epoch: 85. train_loss: 0.050343. train_acc: 65.904. val_loss: nan. val_acc: 63.862. train_simclr_pseudoAcc: 0.897. 
+Best model (so far) successfully saved.
+Epoch: 86. train_loss: 0.050333. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.898. 
+Epoch: 87. train_loss: 0.050325. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.898. 
+Epoch: 88. train_loss: 0.050323. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.898. 
+Epoch: 89. train_loss: 0.050297. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.899. 
+Epoch: 90. train_loss: 0.050306. train_acc: 66.471. val_loss: nan. val_acc: 64.250. train_simclr_pseudoAcc: 0.899. 
+Best model (so far) successfully saved.
+Epoch: 91. train_loss: 0.050308. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.900. 
+Epoch: 92. train_loss: 0.050314. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.901. 
+Epoch: 93. train_loss: 0.050265. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.903. 
+Epoch: 94. train_loss: 0.050264. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.904. 
+Epoch: 95. train_loss: 0.050489. train_acc: 66.040. val_loss: nan. val_acc: 64.838. train_simclr_pseudoAcc: 0.901. 
+Best model (so far) successfully saved.
+Epoch: 96. train_loss: 0.050320. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.904. 
+Epoch: 97. train_loss: 0.050271. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.905. 
+Epoch: 98. train_loss: 0.050220. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.906. 
+Epoch: 99. train_loss: 0.050238. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.906. 
+Epoch: 100. train_loss: 0.050225. train_acc: 67.834. val_loss: nan. val_acc: 65.338. train_simclr_pseudoAcc: 0.906. 
+Best model (so far) successfully saved.
+Epoch: 101. train_loss: 0.050233. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.906. 
+Epoch: 102. train_loss: 0.050200. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.907. 
+Epoch: 103. train_loss: 0.050217. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.907. 
+Epoch: 104. train_loss: 0.050189. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.907. 
+Epoch: 105. train_loss: 0.050189. train_acc: 68.219. val_loss: nan. val_acc: 65.862. train_simclr_pseudoAcc: 0.908. 
+Best model (so far) successfully saved.
+Epoch: 106. train_loss: 0.050182. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.908. 
+Epoch: 107. train_loss: 0.050188. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.908. 
+Epoch: 108. train_loss: 0.050183. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.909. 
+Epoch: 109. train_loss: 0.050169. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.910. 
+Epoch: 110. train_loss: 0.050154. train_acc: 68.544. val_loss: nan. val_acc: 65.850. train_simclr_pseudoAcc: 0.910. 
+Epoch: 111. train_loss: 0.050146. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.910. 
+Epoch: 112. train_loss: 0.050142. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.911. 
+Epoch: 113. train_loss: 0.050135. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.911. 
+Epoch: 114. train_loss: 0.050131. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 115. train_loss: 0.050140. train_acc: 69.175. val_loss: nan. val_acc: 66.175. train_simclr_pseudoAcc: 0.912. 
+Best model (so far) successfully saved.
+Epoch: 116. train_loss: 0.050122. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 117. train_loss: 0.050141. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 118. train_loss: 0.050118. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 119. train_loss: 0.050129. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 120. train_loss: 0.050103. train_acc: 69.445. val_loss: nan. val_acc: 66.450. train_simclr_pseudoAcc: 0.912. 
+Best model (so far) successfully saved.
+Epoch: 121. train_loss: 0.050103. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 122. train_loss: 0.050089. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.912. 
+Epoch: 123. train_loss: 0.050105. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 124. train_loss: 0.050065. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 125. train_loss: 0.050071. train_acc: 69.535. val_loss: nan. val_acc: 66.475. train_simclr_pseudoAcc: 0.913. 
+Best model (so far) successfully saved.
+Epoch: 126. train_loss: 0.050051. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 127. train_loss: 0.050057. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 128. train_loss: 0.050046. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 129. train_loss: 0.050059. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.913. 
+Epoch: 130. train_loss: 0.050056. train_acc: 70.060. val_loss: nan. val_acc: 66.375. train_simclr_pseudoAcc: 0.914. 
+Epoch: 131. train_loss: 0.050035. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 132. train_loss: 0.050026. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 133. train_loss: 0.050023. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 134. train_loss: 0.050026. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 135. train_loss: 0.050052. train_acc: 70.209. val_loss: nan. val_acc: 67.463. train_simclr_pseudoAcc: 0.914. 
+Best model (so far) successfully saved.
+Epoch: 136. train_loss: 0.050021. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 137. train_loss: 0.050000. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 138. train_loss: 0.050008. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.914. 
+Epoch: 139. train_loss: 0.050008. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 140. train_loss: 0.050023. train_acc: 70.366. val_loss: nan. val_acc: 67.038. train_simclr_pseudoAcc: 0.915. 
+Epoch: 141. train_loss: 0.050011. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 142. train_loss: 0.050017. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 143. train_loss: 0.049982. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 144. train_loss: 0.049983. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 145. train_loss: 0.049977. train_acc: 70.860. val_loss: nan. val_acc: 66.900. train_simclr_pseudoAcc: 0.915. 
+Epoch: 146. train_loss: 0.049982. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 147. train_loss: 0.049972. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 148. train_loss: 0.049969. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 149. train_loss: 0.049963. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 150. train_loss: 0.049967. train_acc: 70.981. val_loss: nan. val_acc: 66.888. train_simclr_pseudoAcc: 0.915. 
+Epoch: 151. train_loss: 0.049959. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.915. 
+Epoch: 152. train_loss: 0.049953. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 153. train_loss: 0.049960. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 154. train_loss: 0.049939. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 155. train_loss: 0.049942. train_acc: 71.227. val_loss: nan. val_acc: 67.225. train_simclr_pseudoAcc: 0.916. 
+Epoch: 156. train_loss: 0.049944. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 157. train_loss: 0.049937. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 158. train_loss: 0.049937. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 159. train_loss: 0.049928. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 160. train_loss: 0.049918. train_acc: 71.471. val_loss: nan. val_acc: 67.163. train_simclr_pseudoAcc: 0.916. 
+Epoch: 161. train_loss: 0.049918. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 162. train_loss: 0.049921. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 163. train_loss: 0.049924. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 164. train_loss: 0.049910. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 165. train_loss: 0.049911. train_acc: 71.575. val_loss: nan. val_acc: 67.112. train_simclr_pseudoAcc: 0.916. 
+Epoch: 166. train_loss: 0.049894. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 167. train_loss: 0.049918. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 168. train_loss: 0.049899. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 169. train_loss: 0.049898. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 170. train_loss: 0.049896. train_acc: 71.698. val_loss: nan. val_acc: 66.963. train_simclr_pseudoAcc: 0.917. 
+Epoch: 171. train_loss: 0.049892. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 172. train_loss: 0.049891. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 173. train_loss: 0.049894. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 174. train_loss: 0.049885. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.916. 
+Epoch: 175. train_loss: 0.049883. train_acc: 71.705. val_loss: nan. val_acc: 67.138. train_simclr_pseudoAcc: 0.917. 
+Epoch: 176. train_loss: 0.049878. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 177. train_loss: 0.049877. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 178. train_loss: 0.049892. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 179. train_loss: 0.049885. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 180. train_loss: 0.049875. train_acc: 71.722. val_loss: nan. val_acc: 67.188. train_simclr_pseudoAcc: 0.917. 
+Epoch: 181. train_loss: 0.049882. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 182. train_loss: 0.049870. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 183. train_loss: 0.049868. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 184. train_loss: 0.049878. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 185. train_loss: 0.049876. train_acc: 71.924. val_loss: nan. val_acc: 67.675. train_simclr_pseudoAcc: 0.917. 
+Best model (so far) successfully saved.
+Epoch: 186. train_loss: 0.049872. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 187. train_loss: 0.049873. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 188. train_loss: 0.049870. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 189. train_loss: 0.049868. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 190. train_loss: 0.049874. train_acc: 71.754. val_loss: nan. val_acc: 67.337. train_simclr_pseudoAcc: 0.917. 
+Epoch: 191. train_loss: 0.049869. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 192. train_loss: 0.049866. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 193. train_loss: 0.049864. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 194. train_loss: 0.049871. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 195. train_loss: 0.049867. train_acc: 71.831. val_loss: nan. val_acc: 67.637. train_simclr_pseudoAcc: 0.917. 
+Epoch: 196. train_loss: 0.049856. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 197. train_loss: 0.049854. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 198. train_loss: 0.049867. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 
+Epoch: 199. train_loss: 0.049877. train_acc: Val skipped. val_loss: Val skipped. val_acc: Val skipped. train_simclr_pseudoAcc: 0.917. 

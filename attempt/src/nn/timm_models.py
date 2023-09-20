@@ -10,24 +10,26 @@ def build_timm_model(model_name: str,
         'resnet': 'timm/resnet50.a1_in1k',
         'resnext': 'timm/resnext50_32x4d.a1h_in1k',
         'mobilenet': 'timm/mobilenetv3_small_100.lamb_in1k',
-        'vit': 'timm/vit_tiny_patch16_224.augreg_in21k',
-        'swin': 'timm/swin_tiny_patch4_window7_224.ms_in1k',
-        'mobilevit': 'timm/mobilevitv2_050.cvnets_in1k',
+        # 'vit': 'timm/vit_tiny_patch16_224.augreg_in21k',
+        # 'swin': 'timm/swin_tiny_patch4_window7_224.ms_in1k',
+        # 'mobilevit': 'timm/mobilevitv2_050.cvnets_in1k',
     }
     last_layer_name_map = {
         'resnet': 'fc',
         'resnext': 'fc',
         'mobilenet': 'classifier',
-        'vit': 'head',
-        'swin': 'head.fc',
-        'mobilevit': 'head.fc',
+        # 'vit': 'head',
+        # 'swin': 'head.fc',
+        # 'mobilevit': 'head.fc',
     }
 
     timm_model_name = timm_model_name_map[model_name]
     last_layer_name = last_layer_name_map[model_name]
 
     try:
-        timm_model = timm.create_model(timm_model_name, num_classes=num_classes, pretrained=pretrained)
+        timm_model = timm.create_model(timm_model_name,
+                                       num_classes=num_classes,
+                                       pretrained=pretrained)
     except:
         raise ValueError('`build_timm_model`: model_name (%s) not supported.' %
                          model_name)
@@ -57,7 +59,8 @@ class SimCLRModel(torch.nn.Module):
         # Get the correct dimensions of the last linear layer and remove the linear layer.
         # NOTE: Currently not supporting many options...
         name_list = last_layer_name.split('.')
-        assert any(n == name_list[0] for (n, _) in self.encoder.named_children())
+        assert any(n == name_list[0]
+                   for (n, _) in self.encoder.named_children())
         assert len(name_list) in [1, 2]
         if len(name_list) == 2:
             assert last_layer_name == 'head.fc'
@@ -82,8 +85,7 @@ class SimCLRModel(torch.nn.Module):
         self.projection_head = torch.nn.Sequential(
             torch.nn.Linear(in_features=self.linear_in_features,
                             out_features=hidden_dim,
-                            bias=False),
-            torch.nn.ReLU(inplace=True),
+                            bias=False), torch.nn.ReLU(inplace=True),
             torch.nn.Linear(in_features=hidden_dim,
                             out_features=z_dim,
                             bias=True))

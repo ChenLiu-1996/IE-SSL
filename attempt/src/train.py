@@ -1,9 +1,7 @@
 import argparse
 import os
 import sys
-from typing import Tuple, Dict, Iterable
-from matplotlib import pyplot as plt
-from scipy.stats import pearsonr, spearmanr
+from typing import Tuple
 
 import numpy as np
 import torch
@@ -24,6 +22,7 @@ from log_utils import log
 from path_utils import update_config_dirs
 from seed import seed_everything
 from scheduler import LinearWarmupCosineAnnealingLR
+from extend import ExtendedDataset
 
 
 def print_state_dict(state_dict: dict) -> str:
@@ -46,6 +45,7 @@ def get_dataloaders(
     config: AttributeHashmap
 ) -> Tuple[Tuple[torch.utils.data.DataLoader, ], AttributeHashmap]:
     if config.dataset == 'mnist':
+        imsize = 28
         config.in_channels = 1
         config.num_classes = 10
         dataset_mean = (0.1307, )
@@ -53,6 +53,7 @@ def get_dataloaders(
         torchvision_dataset = torchvision.datasets.MNIST
 
     elif config.dataset == 'cifar10':
+        imsize = 32
         config.in_channels = 3
         config.num_classes = 10
         dataset_mean = (0.4914, 0.4822, 0.4465)
@@ -60,6 +61,7 @@ def get_dataloaders(
         torchvision_dataset = torchvision.datasets.CIFAR10
 
     elif config.dataset == 'stl10':
+        imsize = 96
         config.in_channels = 3
         config.num_classes = 10
         dataset_mean = (0.4467, 0.4398, 0.4066)
@@ -67,6 +69,7 @@ def get_dataloaders(
         torchvision_dataset = torchvision.datasets.STL10
 
     elif config.dataset == 'tinyimagenet':
+        imsize = 64
         config.in_channels = 3
         config.num_classes = 200
         dataset_mean = (0.485, 0.456, 0.406)
@@ -74,6 +77,7 @@ def get_dataloaders(
         torchvision_dataset = TinyImageNet
 
     elif config.dataset == 'imagenet':
+        imsize = 224
         config.in_channels = 3
         config.num_classes = 1000
         dataset_mean = (0.485, 0.456, 0.406)
@@ -84,9 +88,6 @@ def get_dataloaders(
         raise ValueError(
             '`config.dataset` value not supported. Value provided: %s.' %
             config.dataset)
-
-    # NOTE: To accommodate the ViT models, we resize all images to 224x224.
-    imsize = 224
 
     transform_train = SingleInstanceTwoView(imsize=imsize,
                                             mean=dataset_mean,
@@ -120,6 +121,13 @@ def get_dataloaders(
                                           split='test',
                                           download=True,
                                           transform=transform_val)
+
+        if config.dataset == 'stl10':
+            # Training set has too few images (5000 images in total).
+            # Let's augment it into a bigger dataset.
+            train_dataset = ExtendedDataset(train_dataset,
+                                            desired_len=10 *
+                                            len(train_dataset))
 
     elif config.dataset in ['tinyimagenet', 'imagenet']:
         train_dataset = torchvision_dataset(config.dataset_dir,
@@ -155,9 +163,9 @@ def train(config: AttributeHashmap) -> None:
 
     os.makedirs(config.checkpoint_dir, exist_ok=True)
     os.makedirs(config.log_dir, exist_ok=True)
-    log_path = '%s/%s-EquiDim%s-%s-seed%s.log' % (
-        config.log_dir, config.dataset, config.equivariance_dim, config.model,
-        config.random_seed)
+    log_path = '%s/%s-EquiDim%s-TotalDim%s-%s-seed%s.log' % (
+        config.log_dir, config.dataset, config.equivariance_dim, config.z_dim,
+        config.model, config.random_seed)
 
     # Log the config.
     config_str = 'Config: \n'
@@ -188,6 +196,11 @@ def train(config: AttributeHashmap) -> None:
     best_val_metric = 0
     best_model = None
 
+    results_dict = {
+        'epoch': [],
+        'val_acc': [],
+    }
+
     val_metric_pct_list = [20, 30, 40, 50, 60, 70, 80, 90]
     is_model_saved = {}
     for val_metric_pct in val_metric_pct_list:
@@ -202,7 +215,6 @@ def train(config: AttributeHashmap) -> None:
             'train_acc': 0,
             'val_loss': 0,
             'val_acc': 0,
-            'acc_diverg': 0,
         }
 
         state_dict['train_simclr_pseudoAcc'] = 0
@@ -288,16 +300,12 @@ def train(config: AttributeHashmap) -> None:
             state_dict['train_acc'] = probing_acc
             state_dict['val_loss'] = np.nan
             state_dict['val_acc'] = val_acc_final
+            results_dict['epoch'] = epoch_idx
+            results_dict['val_acc'] = val_acc_final
         else:
-            state_dict['train_acc'] = 'Val skipped for efficiency'
-            state_dict['val_loss'] = 'Val skipped for efficiency'
-            state_dict['val_acc'] = 'Val skipped for efficiency'
-
-        if not skip_epoch_simlr:
-            state_dict['acc_diverg'] = \
-                state_dict['train_acc'] - state_dict['val_acc']
-        else:
-            state_dict['acc_diverg'] = 'Val skipped for efficiency'
+            state_dict['train_acc'] = 'Val skipped'
+            state_dict['val_loss'] = 'Val skipped'
+            state_dict['val_acc'] = 'Val skipped'
 
         log('Epoch: %d. %s' % (epoch_idx, print_state_dict(state_dict)),
             filepath=log_path,
@@ -308,10 +316,10 @@ def train(config: AttributeHashmap) -> None:
             if state_dict[val_metric] > best_val_metric:
                 best_val_metric = state_dict[val_metric]
                 best_model = model.state_dict()
-                model_save_path = '%s/%s-EquiDim%s-%s-seed%s-%s' % (
+                model_save_path = '%s/%s-EquiDim%s-TotalDim%s-%s-seed%s-%s' % (
                     config.checkpoint_dir, config.dataset,
-                    config.equivariance_dim, config.model, config.random_seed,
-                    '%s_best.pth' % val_metric)
+                    config.equivariance_dim, config.z_dim, config.model,
+                    config.random_seed, '%s_best.pth' % val_metric)
                 torch.save(best_model, model_save_path)
                 log('Best model (so far) successfully saved.',
                     filepath=log_path,
@@ -321,10 +329,10 @@ def train(config: AttributeHashmap) -> None:
                 for val_metric_pct in val_metric_pct_list:
                     if state_dict[val_metric] > val_metric_pct and \
                     not is_model_saved[str(val_metric_pct)]:
-                        model_save_path = '%s/%s-EquiDim%s-%s-seed%s-%s' % (
+                        model_save_path = '%s/%s-EquiDim%s-TotalDim%s-%s-seed%s-%s' % (
                             config.checkpoint_dir, config.dataset,
-                            config.equivariance_dim, config.model,
-                            config.random_seed, '%s_%s%%.pth' %
+                            config.equivariance_dim, config.z_dim,
+                            config.model, config.random_seed, '%s_%s%%.pth' %
                             (val_metric, val_metric_pct))
                         torch.save(best_model, model_save_path)
                         is_model_saved[str(val_metric_pct)] = True
@@ -333,6 +341,18 @@ def train(config: AttributeHashmap) -> None:
                             filepath=log_path,
                             to_console=False)
 
+    # Save the results after training.
+    save_path_numpy = '%s/%s-EquiDim%s-TotalDim%s-%s-seed%s/%s' % (
+        config.checkpoint_dir, config.dataset, config.equivariance_dim,
+        config.z_dim, config.model, config.random_seed, 'results.npz')
+    os.makedirs(os.path.dirname(save_path_numpy), exist_ok=True)
+
+    with open(save_path_numpy, 'wb+') as f:
+        np.savez(
+            f,
+            epoch=np.array(results_dict['epoch']),
+            val_acc=np.array(results_dict['val_acc']),
+        )
     return
 
 
