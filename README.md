@@ -1,8 +1,8 @@
-# Equivariant SSL
+# Invariance-Equivariance SSL
 **Krishnaswamy Lab, Yale University**
 
 [![Twitter](https://img.shields.io/twitter/follow/KrishnaswamyLab.svg?style=social&label=Follow)](https://twitter.com/KrishnaswamyLab)
-[![Github Stars](https://img.shields.io/github/stars/ChenLiu-1996/EquivariantSSL.svg?style=social&label=Stars)](https://github.com/ChenLiu-1996/EquivariantSSL/)
+[![Github Stars](https://img.shields.io/github/stars/ChenLiu-1996/IE-SSL.svg?style=social&label=Stars)](https://github.com/ChenLiu-1996/IE-SSL/)
 
 
 ## News
@@ -59,3 +59,5 @@ wget -qO- https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/
 
 </details>
 
+## Acknowledgements
+This repository is largely adapted from https://github.com/rdangovs/essl.
